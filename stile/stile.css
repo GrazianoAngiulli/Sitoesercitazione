@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comic+Neue:ital,wght@1,700&display=swap');
+
+body {
+    font-family: 'Comic Neue', cursive;
+    background-color: #1240bf;
+    margin: 0;
+    padding: 0;
+}
+header {
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    background-color: rgb(255, 255, 255);
+    top: 0;
+    z-index: 999;
+    box-shadow: 0px 5px 10px 1px rgb(129, 129, 129);  
+}
+
+header h2 {
+    display: inline-block;
+    margin-left: 15px;
+    margin-right: 10px;
+} 
+
+main {
+    position: relative; /* se utilizziamo assoluto il margine non si riesce a relazionare con le altre cose, quindi non si può mettere
+    margin auto, perchè non percepisce di essere relativo al parent e a tutti gli altri fratelli*/
+    max-width: 800px;
+    background-color: #1240bf;
+    margin: auto;
+    margin-top: 80px; /*spostiamo all'interno della pagina*/
+    padding-top: 10px;
+   
+}
+
+article {
+    margin: 25px;
+}
+
+nav ul { /* con il nav vicino prende solo ul del nav*/
+    list-style: none;
+    margin: 0;
+    padding: 0px;
+}
+a{
+    text-decoration: none;
+}
+
+nav {
+    width: 100%; /* deve essere il 100% della pagina*/
+    height: fit-content;
+    position: relative;
+    overflow: hidden;
+    right: 0;
+
+}
+
+nav ul a {
+    display: block;
+    padding: 0px 25px;
+    color: #000000;
+    height: 70px;
+    line-height: 75px;
+    transition: all 0.3 ease;
+    position: relative;
+    background-color: white;
+}
+
+
+/*nav{
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}*/
+
+
+
+.hamb{
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 40px 20px;
+    z-index: 999;
+}/* Style label tag */
+
+.hamb-line {
+    background: #000000;
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+}
+
+    .hamb-line::before, /* la virgola significa che la regola impatta questi e quelli di dopo*/
+    .hamb-line::after{ /*before e after sono degli elementi che sono al di sopra e al di sotto di hamb line, e sono pseudo elementi che non si trovano nel codice HTML*/
+        background: #000000;
+        content: '';
+        display: block;
+        height: 2px; /* rispettano le misure di hamb line*/
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+    }
+    .hamb-line::before{
+        top: 5px;
+    }
+    .hamb-line::after{
+        top: -5px;
+    }
+
+    .side-menu {
+        display: none;
+    }
+
+
+    .side-menu:checked ~ .hamb .hamb-line {
+        background: transparent;
+    }
+
+    .side-menu:checked ~ .hamb .hamb-line::before {
+        background: transparent;
+    }
+    .side-menu:checked ~ .hamb .hamb-line::after {
+        background: transparent;
+    }
+
+
+
+ /*   .side-menu:checked ~ .hamb .hamb-line::before { hamb line contenuto in hamb che viene checcato
+        transform: rotate(-45deg);
+        top:0;
+    }
+    .side-menu:checked ~ .hamb .hamb-line::after {
+        transform: rotate(45deg);
+        top:0;
+    }*/
+
+   
+
+    nav ul li{
+        float: left;
+    }
+
+    /*nav{
+        max-height: none;
+        top: 0;
+        float: right;
+        width: fit-content;
+    }
+
+    nav ul a:hover{
+        background-color: black;
+        color: white;
+
+    }*/
+    
+
+
